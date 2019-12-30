@@ -12,7 +12,7 @@ import javax.persistence.*;
 @RequiredArgsConstructor
 @EqualsAndHashCode
 @Entity(name = "products")
-public class ProductsDomain {
+public class Products {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
