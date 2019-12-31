@@ -1,6 +1,7 @@
 package br.com.cassiamani.oauth2.domain;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 
 @Getter
 @Setter
+@NoArgsConstructor
 @Entity(name = "Roles")
 public class UserRoles implements GrantedAuthority {
 

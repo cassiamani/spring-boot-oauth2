@@ -22,31 +22,31 @@ public class UserDetailsConfig extends Users implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return super.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return null;
+        return this.getEmail();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
