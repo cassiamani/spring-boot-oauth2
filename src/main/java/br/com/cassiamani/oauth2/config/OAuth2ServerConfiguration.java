@@ -46,14 +46,11 @@ public class OAuth2ServerConfiguration extends AuthorizationServerConfigurerAdap
         clients
                 .inMemory()
                 .withClient("client")
-                .authorizedGrantTypes(
-                        "password",
-                        "authorization_code",
-                        "refresh_token")
+                .secret(passwordEncoder.encode("123"))
+                .authorizedGrantTypes("password", "authorization_code", "refresh_token")
                 .scopes("all")
                 .refreshTokenValiditySeconds(300000)
                 .resourceIds(RESOURCE_ID)
-                .secret(passwordEncoder.encode("123"))
                 .accessTokenValiditySeconds(50000);
     }
 

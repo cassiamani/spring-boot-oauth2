@@ -2,12 +2,11 @@ package br.com.cassiamani.oauth2.config;
 
 import br.com.cassiamani.oauth2.domain.UserRoles;
 import br.com.cassiamani.oauth2.domain.Users;
-import br.com.cassiamani.oauth2.enums.UserRolesEnum;
+import br.com.cassiamani.oauth2.domain.constants.UserRolesConstants;
 import br.com.cassiamani.oauth2.repository.UserRolesRepository;
 import br.com.cassiamani.oauth2.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -33,8 +32,8 @@ public class DataInitializer implements ApplicationListener<ContextRefreshedEven
         List<Users> users = usersRepository.findAll();
 
         if (users.isEmpty()) {
-            createUser("Administrador", "admin@admin.com.br", passwordEncoder.encode("123456"), UserRolesEnum.ROLE_ADMIN.toString());
-            createUser("Client", "client@client.com.br", passwordEncoder.encode("123456"), UserRolesEnum.ROLE_CLIENT.toString());
+            createUser("Administrador", "admin@admin.com.br", passwordEncoder.encode("123456"), UserRolesConstants.ROLE_ADMIN);
+            createUser("Client", "client@client.com.br", passwordEncoder.encode("123456"), UserRolesConstants.ROLE_CLIENT);
         }
     }
 
