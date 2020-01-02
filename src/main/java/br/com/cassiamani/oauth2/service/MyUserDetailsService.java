@@ -1,14 +1,12 @@
 package br.com.cassiamani.oauth2.service;
 
-import br.com.cassiamani.oauth2.config.UserDetailsConfig;
+import br.com.cassiamani.oauth2.config.UserDetailsConfiguration;
 import br.com.cassiamani.oauth2.domain.Users;
 import br.com.cassiamani.oauth2.repository.UsersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -25,6 +23,6 @@ public class MyUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException(String.format("Usuário não encontrado: " + username));
         }
 
-        return new UserDetailsConfig(users);
+        return new UserDetailsConfiguration(users);
     }
 }

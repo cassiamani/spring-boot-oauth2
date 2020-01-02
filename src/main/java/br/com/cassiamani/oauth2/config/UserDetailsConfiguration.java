@@ -8,10 +8,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-public class UserDetailsConfig extends Users implements UserDetails {
+public class UserDetailsConfiguration extends Users implements UserDetails {
 
 
-    public UserDetailsConfig(Users users) {
+    public UserDetailsConfiguration(Users users) {
         super(users);
     }
 
